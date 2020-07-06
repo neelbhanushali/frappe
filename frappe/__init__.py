@@ -490,8 +490,7 @@ def sendmail(recipients=[], sender="", subject="No Subject", message="No Message
 	message = content or message
 
 	if as_markdown:
-		from frappe.utils import md_to_html
-		message = md_to_html(message)
+		message = frappe.utils.md_to_html(message)
 
 	if not delayed:
 		now = True
